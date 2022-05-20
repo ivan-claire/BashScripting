@@ -25,6 +25,7 @@ jobs:
              IFS=$'\t' read name url <<< "$artifact"
              gh api $url > "$name.zip"
              unzip -d "$name" "$name.zip"
+             echo ""
            done
 
       - name: Publish Unit Test Results
